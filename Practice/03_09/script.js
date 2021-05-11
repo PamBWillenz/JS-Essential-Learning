@@ -23,4 +23,25 @@ const backpack = {
     this.strapLength.left = lengthLeft;
     this.strapLength.right = lengthRight;
   },
+  newVolume: function (volume) {
+    this.volume = volume;
+  },
+  newColor: function (color) {
+    this.color = color;
+  },
+  newpocketNum: function (pocketNum) {
+    this.pocketNum = pocketNum;
+  },
 };
+
+console.log("Volume before:", backpack.volume);
+backpack.newVolume(50);
+console.log("Volume after:", backpack.volume);
+
+console.log("Color before:", backpack.color);
+backpack.newColor("blue");
+console.log("Color after:", backpack.color);
+
+console.log("Pocket Number before:", backpack.pocketNum);
+backpack.newpocketNum(20);
+console.log("Pocket Number after:", backpack.pocketNum);
