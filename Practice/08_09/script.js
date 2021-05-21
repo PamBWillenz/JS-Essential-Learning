@@ -57,3 +57,35 @@ const content = `
       }</span></li>
     </ul>  
 `;
+/**
+ * addFigure function
+ * - Receives dataObj
+ * - Creates <figure> <img> <figcaption>
+ * - Returns <figure>
+ */
+const addFigure = (dataObj) => {
+  let newFigure = document.createElement("figure");
+  let newImg = document.createElement("img");
+  newImg.setAttribute("src", dataObj.image);
+  newImg.setAttribute("alt", "");
+  let newDesc = document.createElement("figcaption");
+  newDesc.innerText = dataObj.description;
+  newFigure.append(newImg, newDesc);
+  return newFigure;
+};
+
+/**
+ * createArticle function
+ * - Receives backpack object
+ * - Creates <article>
+ * - Calls addFigure()
+ * - Returns <article>
+ */
+const createArticle = (frogpack) => {
+  let newArticle = document.createElement("article");
+  newArticle.innerHTML = content;
+  newArticle.prepend(addFigure(frogpack));
+  return newArticle;
+};
+
+document.querySelector("main").append(createArticle(frogpack));
